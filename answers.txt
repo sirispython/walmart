@@ -1,0 +1,11 @@
+3. What other information would you add to health endpoint json object in step 2? Explain what would be the use case for that extra information? 
+
+I would probably add the following -
+A reference to logs for debugging in case of an error
+
+5. a. I would add unit test files to run during build to make sure that all unit tests are running without errors.
+   b. Also add automation tests to check if all use cases are running correctly (using automation frameworks like robot or anything similar)
+   c. Add a pool of physical machines and VMs and write pool yml files to indicate which tests should run on which machines
+   d. Use a CICD service like Jenkins to support the above steps
+   e. The CICD pipeline should be used for building, deployment and running the test cases on the test machines. The build stage is used to check if there were no faulty check-ins, deployment also for faulty check-in as well as missing dependencies or improper dependency installation. The test cases will indicate if any functionality is breaking because of new check-ins or change in infrastructure if any.
+
